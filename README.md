@@ -6,7 +6,7 @@ a hard-coded A2-Logo in the upper right corner and some slight chances to the de
 
 The demo code also includes some useful features you can use if you want to!
 
-For a sample take a look [here](https://github.com/A2-Collaboration-dev/metroazwei/blob/master/demo/demo.pdf)
+For a sample take a look [here](https://github.com/A2-Collaboration/metroazwei/blob/master/demo/demo.pdf)
 
 ## Installation
 Download / clone this repository and put the theme files (including the white A2 logo) into:
