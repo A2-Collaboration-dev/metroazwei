@@ -33,8 +33,8 @@
 %\usepackage{pifont} %important!
 \newcommand{\cmark}{\textcolor{A2green}{\ding{51}}}%
 \newcommand{\xmark}{\textcolor{A2red}{\ding{55}}}%
-\newcommand{\done}{\rlap{$\square$}{\raisebox{1.5pt}{\large\hspace{1pt}\cmark}}\hspace{-2.2pt}}
-\newcommand{\wontfix}{\rlap{$\square$}{\large\hspace{.5pt}\xmark}\hspace{-0pt}}
+\newcommand{\done}{\rlap{$\openbox$}{\raisebox{1.5pt}{\large\hspace{1pt}\cmark}}\hspace{-2.2pt}}
+\newcommand{\wontfix}{\rlap{$\openbox$}{\large\hspace{.5pt}\xmark}\hspace{-0pt}}
 \makeatletter
 \newcommand{\mymakelabel}[1]{%
 	\begingroup
@@ -42,7 +42,7 @@
 	\def\@tempb{\@itemlabel}%
 	\ifx\@tempa\@tempb
 	\endgroup
-	\hss \llap{$\square$}%
+	\hss \llap{$\openbox$}%
 	\else
 	\endgroup
 	\hss \llap{#1}%
