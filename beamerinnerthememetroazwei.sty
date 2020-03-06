@@ -18,6 +18,28 @@
 \RequirePackage{calc}
 \RequirePackage{pgfopts}
 \RequirePackage{tikz}
+\RequirePackage{listings}
+\lstset{
+    language=[11]C++,
+    basicstyle=\color{DARKteal}\ttfamily\footnotesize,
+    keywordstyle=\color{A2red}\ttfamily,
+    stringstyle=\color{A2green}\ttfamily,
+    commentstyle=\itshape\color{LIGHTteal},
+    numbers=left,
+    numberstyle=\scriptsize\color{GREYteal},
+    breaklines=true,
+    breakatwhitespace=true,
+    frame=single,
+    rulecolor=\color{GREYteal!0},
+    backgroundcolor=\color{DARKteal!6},
+    framesep=5pt,
+    xleftmargin=10pt,
+    xrightmargin=10pt,
+}
+%%%------------- custom headers -------------%
+\newcommand{\heading}[1]{{\par{\scshape\large\bfseries#1}\vspace*{-5pt}\par}}%
+\newcommand{\alertheading}[1]{{\par{\scshape\large\bfseries\textcolor{A2red}{#1}}\vspace*{-5pt}\par}}%
+%
 \pgfkeys{
   /metroazwei/inner/sectionpage/.cd,
     .is choice,
