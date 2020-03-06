@@ -92,13 +92,24 @@
     ]{frametitle}%
   \metroazwei@frametitlestrut@start%
   \insertframetitle%
+    \ifx\insertframesubtitle\@empty%
+        %
+        \begin{tikzpicture}[remember picture,overlay]%
+		    \node[anchor=north east,yshift=-0.5mm,xshift=-0.5mm] at (current page.north east){\includegraphics[height=0.6cm]{a2logo_white.pdf}};%
+	    \end{tikzpicture}%
+        %
+    \else%
+        \newline\usebeamerfont{framesubtitle}%
+        \usebeamercolor[fg]{framesubtitle}%
+        \insertframesubtitle%
+    %
+    \begin{tikzpicture}[remember picture,overlay]%
+		\node[anchor=north east,yshift=-0.97mm,xshift=-0.97mm] at (current page.north east){\includegraphics[height=0.6cm]{a2logo_white.pdf}};%
+	\end{tikzpicture}%
+    %
+    \fi%
   \nolinebreak%
   \metroazwei@frametitlestrut@end%
-    %
-    \begin{tikzpicture}[remember picture,overlay]
-		\node[anchor=north east,yshift=-0.6mm,xshift=-0.5mm] at (current page.north east){\includegraphics[height=0.6cm]{a2logo_white.pdf}};
-	\end{tikzpicture}
-    %
   \end{beamercolorbox}%
 }
 \setbeamertemplate{frametitle continuation}{%
