@@ -6,3 +6,6 @@ demo/demo.snm
 demo/demo.synctex.gz
 demo/demo.toc
 demo/demo.vrb
+demo/demo.fdb_latexmk
+demo/demo.fls
+demo/demo.xdv

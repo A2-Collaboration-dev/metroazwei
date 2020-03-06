@@ -5,11 +5,13 @@
 %\documentclass[10pt,fleqn,handout]{beamer}
 \usetheme[ % choose your options, choose wisely
 	titleformat title= regular, % regular, smallcaps, allsmallcaps, allcaps
+	titleformat subtitle= allsmallcaps, % regular, smallcaps, allsmallcaps, allcaps
 	titleformat frame= regular, % regular, smallcaps, allsmallcaps, allcaps
 	progressbar=frametitle,% frametitle, head, foot, none
 	numbering=fraction,% counter, fraction, none
 	block=fill,% fill, transparent
 	sectionpage=progressbar,% none, simple, progressbar
+	subsectionpage=none,% none, simple, progressbar
 	%
 	]{metroazwei}
 %
@@ -55,8 +57,8 @@
 	\enditemize\vspace*{.5em}
 }
 \makeatother
-
-%%%------------- ToDoList -------------%
+%
+%%%------------- Boxes -------------%
 %\usepackage{mdframed} %important!
 \mdfdefinestyle{alert}{
 	innertopmargin=1.75ex,
@@ -88,7 +90,7 @@
 	backgroundcolor=DARKteal!6,
 	fontcolor=DARKteal,
 }
-
+%
 %%%------------- title -------------%
 \title[Metropolis A2] % short title
 			{Metropolis theme for the A2 Collaboration} % long title
@@ -104,17 +106,17 @@
 \titlegraphic{
 	\includegraphics[height=\logoheight]{a2logo_light.pdf}
 }
-
+%
 %%------------- TALK -------------%
-\begin{document}
-
-\maketitle
-
-\begin{frame}{Outline}
-%		\setbeamertemplate{section in toc}[sections numbered]
+\begin{document}%
+%
+\maketitle%
+%
+\begin{frame}{Outline}%
+		\setbeamertemplate{section in toc}[sections numbered]
 %		\setbeamertemplate{subsection in toc}[subsections numbered]
 		\tableofcontents
-\end{frame}
+\end{frame}%
 
 \section{Introduction \& Installation}
 
@@ -141,10 +143,11 @@ Then you can use it in any beamer presentation like this:
 \documentclass[10pt]{beamer}
 \usetheme[]{metroazwei}
 \end{verbatim}
-Take a look into this demo pdf for different options or even better take a look at the original documentation of metropolis.
+Take a look into the source code for this demo for different options and take a look at the original documentation of metropolis.
 \end{frame}
 
 \section{Theme features}
+
 \subsection{Title formats}
 
 \begin{frame}{Title formats}
@@ -155,18 +158,19 @@ Take a look into this demo pdf for different options or even better take a look 
 		\item \textsc{all small caps}
 		\item ALL CAPS
 	\end{itemize}
-	They can either be set at once for every title type or individually.
+	It can be set globally for presentation title \& subtitle and frametitles.
+	They can also be set individually for frametitles, see next slide.
 \end{frame}
 
 {
 \metroset{titleformat frame=smallcaps}
-	\begin{frame}{Small caps}
+\begin{frame}{Small caps}
 		This frame uses the \texttt{smallcaps} title format.
 		\vspace{5mm}
 		\begin{alertblock}{Potential Problems}
 			Be aware that not every font supports small caps. If for example you typeset your presentation with pdfTeX and the Computer Modern Sans Serif font, every text in small caps will be typeset with the Computer Modern Serif font instead.
-		\end{alertblock}
-	\end{frame}
+\end{alertblock}
+\end{frame}
 }
 
 \subsection{Elements}
@@ -198,12 +202,31 @@ or show \textbf{bold} results.\end{verbatim}
 		\item \textbf{\textit{Bold Italic}}
 		\item \textbf{\textsc{Bold Small Caps}}
 		\item \texttt{Monospace}
-		\item \texttt{\textit{Monospace Italic}}
 		\item \texttt{\textbf{Monospace Bold}}
-		\item \texttt{\textbf{\textit{Monospace Bold Italic}}}
 	\end{itemize}
 \end{frame}
 
+\begin{frame}{A slide with a Framesubtitle}
+\framesubtitle{but it breaks the design quite a lot}
+So maybe avoid using it and rather use a
+
+\heading{Heading}
+in your slide, which is expained on slide~\ref{important}: \hyperlink{important}{Headings}
+
+\end{frame}
+
+\begin{frame}[fragile]{Headings}\label{important}
+Sometimes you want to talk about different
+\heading{Topics}
+in one slide or need something to structure it?
+\alertheading{Use Headings!}
+They will always have the same style throughout your presentation.
+
+\begin{verbatim}
+\heading{Topic}
+\alertheading{Important Topic}
+\end{verbatim}
+\end{frame}
 
 \begin{frame}{Tables}
 	Use the booktabs package for nicer tables
@@ -318,7 +341,25 @@ to get \dots
 	I'm a simple slide to emphasize something important.
 \end{frame}
 
-\section{more Features which are included in this demo.tex}
+\subsection{Code Frames}
+
+\begin{frame}[fragile]{Frames with Code}
+The package \texttt{listings} is already included in the metroazwei theme, so you can use the \texttt{lstlisting} environment to show off your code:
+\begin{lstlisting}
+// 'Hello World!' program 
+
+#include <iostream>
+
+int main()
+{
+std::cout << "Hello World!" << std::endl;
+return 0;
+}
+\end{lstlisting}
+By default it highlights but you can change the settings, just look up the documentation.
+\end{frame}
+
+\section{more Features which are only included in this demo.tex}
 
 \begin{frame}[fragile]{To Do Lists}
 
@@ -360,7 +401,6 @@ Thanks to Sascha Wagner to implement this
 \end{mdframed}
 \end{verbatim}}
 \end{frame}
-
 
 \section{Conclusion}
 
