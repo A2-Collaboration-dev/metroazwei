@@ -30,7 +30,14 @@
 \usepackage{booktabs} % better tables
 \usepackage{pifont} % for to do list
 \usepackage{mdframed} % for more boxes
-
+%
+%%%------------- Old style figures / "lowercase" numbers -------------%
+\usefonttheme{professionalfonts}% required for mathspec
+\usepackage{mathspec}
+\setsansfont[BoldFont={Fira Sans},
+Numbers={OldStyle}]{Fira Sans Light}
+\setmathsfont(Digits)[Numbers={Lining, Proportional}]{Fira Sans Light}
+%
 %%%------------- ToDoList -------------%
 %\usepackage{pifont} %important!
 \newcommand{\cmark}{\textcolor{A2green}{\ding{51}}}%
